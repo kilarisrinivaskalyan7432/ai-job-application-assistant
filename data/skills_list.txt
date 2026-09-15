@@ -1,0 +1,22 @@
+Python
+SQL
+MySQL
+OOP
+Object-Oriented Programming
+REST API
+FastAPI
+JSON
+Git
+GitHub
+Pandas
+NumPy
+Scikit-learn
+Machine Learning
+LangChain
+Google Gemini
+FAISS
+Sentence Transformers
+Streamlit
+Requests
+Web Scraping
+Data Structures

@@ -1,0 +1,19 @@
+Python Developer
+
+We are looking for an entry-level Python Developer.
+
+Requirements:
+- Strong knowledge of Python
+- Object-Oriented Programming
+- SQL and MySQL
+- REST APIs
+- JSON
+- Git and GitHub
+- Pandas and NumPy
+- Basic data structures
+- Problem solving skills
+
+Good to have:
+- FastAPI
+- Requests
+- Web scraping experience
