@@ -1,62 +1,188 @@
-# Autonomous Job Matcher
+````markdown
+# AI Job Application Assistant
 
-An explainable, human-in-the-loop job application assistant. The current milestone focuses on reliable resume-to-job matching before adding external job search or LLM features.
+An AI-powered, human-in-the-loop job application assistant that analyzes job descriptions against multiple resumes, selects the best-fit resume, generates tailored cover letters, and tracks application recommendations.
+
+> **Project Status:** In Development
+
+## Features
+
+- Search and load job descriptions from local job data
+- Load and analyze multiple PDF resumes
+- Compare resumes against job descriptions
+- Calculate resume--JD match scores
+- Identify matched and missing technical skills
+- Select the best-fit resume for each job
+- Generate resume-grounded cover letters using Google Gemini
+- Store job recommendations and match scores in SQLite
+- Track application workflow status
+- Human approval before any application submission
+- Streamlit dashboard for reviewing recommendations
 
 ## Architecture
 
 ```text
-PDF resumes -> resume discovery/parser -> resume text
-																			\
-																			 -> combined matcher -> ranked recommendations -> SQLite
-Job JSON --------------------------------/
+                    +------------------+
+                    |   Job Sources    |
+                    |  JSON / Search   |
+                    +--------+---------+
+                             |
+                             v
+                    +------------------+
+                    |   Job Analysis   |
+                    | JD Parsing/Search|
+                    +--------+---------+
+                             |
+                             v
++----------------+   +------------------+
+| PDF Resumes    |-->| Resume Matching  |
+| Multiple       |   | Semantic + Skill |
++----------------+   +--------+---------+
+                             |
+                             v
+                    +------------------+
+                    | Best Resume      |
+                    | Selection        |
+                    +--------+---------+
+                             |
+                             v
+                    +------------------+
+                    | Google Gemini    |
+                    | Cover Letter     |
+                    +--------+---------+
+                             |
+                             v
+                    +------------------+
+                    | SQLite Database  |
+                    | Recommendations  |
+                    | Status Tracking  |
+                    +--------+---------+
+                             |
+                             v
+                    +------------------+
+                    | Human Approval   |
+                    +------------------+
+````
+
+## Project Workflow
+
+1. Load available job descriptions.
+2. Load all PDF resumes from `data/resumes/`.
+3. Extract and clean resume text.
+4. Compare each resume with the job description.
+5. Calculate semantic similarity and skill-based matching scores.
+6. Identify matched and missing skills.
+7. Select the highest-scoring resume.
+8. Generate a tailored cover letter using Google Gemini.
+9. Save the recommendation and match score to SQLite.
+10. Move the recommendation through the application workflow with human approval.
+
+The system does **not** automatically submit job applications.
+
+## Matching System
+
+The resume matching system evaluates multiple signals:
+
+* **Semantic similarity** - Measures similarity between resume and job-description content.
+* **Required skill match** - Compares technical skills found in the resume and job description.
+* **Role relevance** - Checks how well the resume aligns with the target role.
+* **Missing skill penalty** - Accounts for required skills that are not present in the selected resume.
+
+The final score combines these signals into an overall resume--JD match score.
+
+## AI Integration
+
+Google Gemini is used for:
+
+* Tailored cover-letter generation
+* Job-specific application content
+* Resume-grounded recommendations
+
+The generated content is designed to use information supported by the selected resume and job description rather than inventing candidate experience.
+
+## Human-in-the-Loop Workflow
+
+The project is designed around human approval rather than unrestricted automatic application submission.
+
+```text
+FOUND
+  |
+  v
+MATCHED
+  |
+  v
+SHORTLISTED
+  |
+  v
+DRAFTED
+  |
+  v
+PENDING_APPROVAL
+  |
+  +----> REJECTED
+  |
+  v
+APPROVED
+  |
+  v
+APPLIED
 ```
 
-- `src/resume/` discovers every PDF in `data/resumes/` and extracts its text.
-- `src/jobs/` loads local job descriptions from `data/jobs/jobs.json`.
-- `src/matching/` compares every resume with every job using four signals:
-	- semantic token similarity
-	- required-skill coverage
-	- role-title relevance
-	- missing-skill penalty
-- `src/database/` stores recommendations in SQLite.
-- `src/agent/` contains plain Python tool wrappers. LangChain can be added later around these stable functions.
-- `frontend/` is intentionally kept until the core workflow is stable.
+The approval step keeps the candidate in control of the final application decision.
 
-## Workflow
+## Project Structure
 
-1. Add a PDF anywhere in `data/resumes/`.
-2. Add job objects to `data/jobs/jobs.json`.
-3. Run the recommendation pipeline:
-
-	 ```powershell
-	 .\venv\Scripts\python.exe -m src.main
-	 ```
-
-4. Review the ranked resume/job pairs and their score breakdown.
-5. Approve or reject a recommendation in SQLite before any future submission step.
-6. Add Gemini later for tailored cover letters, application answers, job analysis, and recommendations. It is not required for matching.
-7. Add job searching after local resume selection is proven reliable.
-
-## Job format
-
-`data/jobs/jobs.json` accepts either a list or an object containing a `jobs` list:
-
-```json
-[
-	{
-		"id": "job-001",
-		"title": "Python Backend Developer",
-		"company": "Example Inc",
-		"description": "Build APIs with Python, FastAPI, SQL, Docker, and AWS"
-	}
-]
+```text
+ai-job-application-assistant/
+│
+├── data/
+│   ├── jobs/
+│   │   ├── jobs.json
+│   │   └── test_jd.txt
+│   │
+│   └── resumes/
+│       └── *.pdf
+│
+├── frontend/
+│   └── streamlit_app.py
+│
+├── src/
+│   ├── agent/
+│   │   ├── job_agent.py
+│   │   ├── state.py
+│   │   └── tools.py
+│   │
+│   ├── ai/
+│   │   ├── cover_letter.py
+│   │   ├── gemini.py
+│   │   └── prompts.py
+│   │
+│   ├── api/
+│   │   └── routes.py
+│   │
+│   ├── database/
+│   │   ├── db.py
+│   │   └── models.py
+│   │
+│   ├── jobs/
+│   │   ├── jd_parser.py
+│   │   ├── job_manager.py
+│   │   └── job_search.py
+│   │
+│   ├── matching/
+│   │   ├── scorer.py
+│   │   ├── semantic_matcher.py
+│   │   └── skill_matcher.py
+│   │
+│   └── resume/
+│       ├── main.py
+│       ├── resume_manager.py
+│       ├── resume_parser.py
+│       └── resume_selector.py
+│
+├── tests/
+│   ├── test_job_search.py
+│   ├── test_matching.py
+│   └── t
 ```
 
-## Development
-
-```powershell
-python -m pip install -r requirements.txt
-python -m pytest -q
-```
-
-The SQLite database is created at `data/autonomus_job.sqlite3` when recommendations are generated. It is ignored by Git, as are `.env`, the virtual environment, and Python cache files.
