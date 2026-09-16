@@ -1,56 +1,56 @@
-[
-    {
-        "title": "Subject Matter Expert / Content Developer - Data Science",
-        "company": "Sri Gajanan E-slates Pvt Ltd (Ekalasaala)",
-        "location": "Hitec City, Hyderabad",
-        "posted": "2026-09-11",
-        "experience": "Fresher / 0-3 yrs",
-        "description": "Create ML/Data Science training content and code. Requires Python, TensorFlow, ML algorithms, statistical modeling, Data Visualization, AI/DL/CV knowledge. B.Tech/M.Tech in CS or related field.",
-        "url": "https://to.indeed.com/aaxg6jts967l"
-    },
-    {
-        "title": "Junior AI & Automation Executive",
-        "company": "Digital Mojo",
-        "location": "Banjara Hills, Hyderabad",
-        "posted": "2026-08-28",
-        "experience": "Freshers / 0-1 yr",
-        "description": "Build AI-powered automation workflows using Python, APIs, n8n/Make.com/Zapier, and tools like ChatGPT/Claude/Gemini. B.Tech/B.E. any branch, Python knowledge preferred.",
-        "url": "https://to.indeed.com/aa98k6k4vs7r"
-    },
-    {
-        "title": "Python Intern / Full Stack Python Developer (ML/AI)",
-        "company": "MSR Edusoft Pvt Ltd",
-        "location": "Ameerpet, Hyderabad",
-        "posted": "2026-08-27",
-        "experience": "Fresher (2025 pass-outs eligible; 2026 batch not eligible)",
-        "description": "Develop Full Stack Python apps with Django/Flask, assist in AI/ML project implementation. B.Tech/B.E. in CSE/IT/ECE, pass-out years 2012-2025 eligible.",
-        "url": "https://to.indeed.com/aasgx2c7kdlg"
-    },
-    {
-        "title": "Junior AI Engineer",
-        "company": "MHTECHIN Technologies",
-        "location": "Bengaluru, Karnataka",
-        "posted": "2026-07-09",
-        "experience": "Entry Level (0-1 yr)",
-        "description": "Support development/testing of AI applications, work with APIs and automation workflows. Requires basic Python knowledge and understanding of AI/ML concepts.",
-        "url": "https://to.indeed.com/aa6lvvhjm2y7"
-    },
-    {
-        "title": "Python Developer",
-        "company": "MHTECHIN Technologies",
-        "location": "Pune, Maharashtra",
-        "posted": "2026-07-09",
-        "experience": "Entry Level",
-        "description": "Entry-level Python Developer role at MHTECHIN's Pune office, part of the same fresher-hiring drive as their Bengaluru AI Engineer role.",
-        "url": "https://to.indeed.com/aady9xc74zsp"
-    },
-    {
-        "title": "AI Data Engineer Trainee",
-        "company": "Crossroad Elf DSS Pvt Ltd",
-        "location": "HSR Layout, Bengaluru",
-        "posted": "2026-05-28",
-        "experience": "Freshers / up to 1 yr",
-        "description": "Build data pipelines and ETL processes, work with Pandas/NumPy/Scikit-learn, write SQL queries, support AI/ML model data prep. Bachelor's in CS/IT/Data Science/AI.",
-        "url": "https://to.indeed.com/aams4rznthn8"
-    }
-]
+    [
+        {
+            "title": "Fresher Python AI / ML Developer",
+            "company": "Shine Infosoft",
+            "location": "Ahmedabad, Gujarat",
+            "posted": "2026-09-11",
+            "experience": "Fresher / 0-2 yrs (03 months preferred)",
+            "description": "Build Python applications and Generative AI solutions using LLMs, LangChain, LangGraph, RAG, and AI Agents. Requires FastAPI/Django, Python fundamentals, OOP, basic ML, and at least one GenAI project. Perfect keyword match for your LangChain + RAG + FastAPI + Gemini projects.",
+            "url": "https://www.naukri.com/job-listings-fresher-python-ai-ml-developer-shine-infosoft-ahmedabad-0-to-2-years-120626503568"
+        },
+        {
+            "title": "Python AI Automation Developer (Fresher)",
+            "company": "Creston & Company",
+            "location": "Ahmedabad, Gujarat",
+            "posted": "2026-09-12",
+            "experience": "Fresher / Entry level (final-year & freshers welcome)",
+            "description": "Develop Python AI automation systems, AI agents, REST APIs, and backend apps. Good-to-have: FastAPI, LangChain/LangGraph, LLMs, OpenAI/Gemini-style APIs, n8n. Strong match for your agent workflows, FastAPI, LangChain, and Gemini experience.",
+            "url": "https://in.linkedin.com/jobs/view/python-ai-automation-developer-fresher-at-creston-company-4417880251"
+        },
+        {
+            "title": "AI Engineer  RAG (Intern / Fresher)",
+            "company": "Taxmann Publications",
+            "location": "New Delhi",
+            "posted": "2026-09-08 (still active mid-Sep)",
+            "experience": "0-1 years / Intern-Fresher",
+            "description": "Build and optimize RAG pipelines (document ingestion, chunking, embeddings, retrieval). Use LangChain, FAISS/Pinecone/Chroma, FastAPI/Flask. Direct match for your Intelligent Document Search & QA System project.",
+            "url": "https://www.naukri.com/job-listings-ai-engineer-rag-intern-taxmann-new-delhi-0-to-1-years-140126910261"
+        },
+        {
+            "title": "GenAI Developer Fresher",
+            "company": "Yugma",
+            "location": "Pune (Remote option)",
+            "posted": "2026-09-08 (active)",
+            "experience": "0-1 years (20232025 pass-outs eligible)",
+            "description": "Work on Generative AI applications, chatbots, automation, LLMs, prompt engineering, Python, REST APIs. Preferred: LangChain, Hugging Face, Pandas/NumPy. Excellent ATS fit for your Gemini + LangChain + FastAPI background.",
+            "url": "https://www.naukri.com/job-listings-genai-developer-fresher-yugma-pune-0-to-1-years-270526017724"
+        },
+        {
+            "title": "Full Stack Developer | AI Applications (Python + React) | Fresher",
+            "company": "Aivoa",
+            "location": "Bengaluru (Remote)",
+            "posted": "Recent (active mid-Sep 2026)",
+            "experience": "0-1 years / Fresher",
+            "description": "Build backend with Python FastAPI + AI-powered workflows and automation. Focus on real product features. Strong match for your FastAPI + AI agent + Streamlit projects.",
+            "url": "https://www.naukri.com/job-listings-full-stack-developer-ai-applications-python-react-fresher-aivoa-bengaluru-0-to-1-years-060726011850"
+        },
+        {
+            "title": "AI Engineer (Fresher)",
+            "company": "Intelizign Lifecycle Services",
+            "location": "Bengaluru",
+            "posted": "2026-09-08 (active)",
+            "experience": "0-1 Year (2025/2026 pass-outs)",
+            "description": "Assist in AI/ML solutions, Generative AI, LLMs, Prompt Engineering, LangChain/Hugging Face. Python + basic ML required. ECE background accepted. Good match for your overall profile.",
+            "url": "https://www.naukri.com/job-listings-ai-engineer-fresher-intelizign-lifecycle-services-bengaluru-0-to-1-years-230726004227"
+        }
+    ]

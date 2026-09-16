@@ -384,8 +384,8 @@ def process_job(
 # ---------------------------------------------------------
 
 def run_agent(
-    role: str = "Python",
-    location: str = "Hyderabad",
+    role: str = None,
+    location: str = None,
     limit: int = 10,
     database_path: str | Path = (
         PROJECT_ROOT
@@ -448,8 +448,8 @@ def run_agent(
 if __name__ == "__main__":
 
     results = run_agent(
-        role="Python",
-        location="Hyderabad",
+        role=None,
+        location=None,
         limit=10,
     )
 
