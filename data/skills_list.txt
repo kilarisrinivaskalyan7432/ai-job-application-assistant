@@ -20,3 +20,6 @@ Streamlit
 Requests
 Web Scraping
 Data Structures
+Agile
+AI 
+GEN AI 
